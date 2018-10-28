@@ -8,6 +8,10 @@ import { NavbarComponent } from './navigation/navbar/navbar.component';
 import { ShopMaterialModule } from './shop-material/shop-material.module';
 import { ShoppingCartComponent } from './view/shopping-cart/shopping-cart.component';
 import { HomeComponent } from './view/home/home.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import { HomeComponent } from './view/home/home.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ShopMaterialModule
+    ShopMaterialModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
