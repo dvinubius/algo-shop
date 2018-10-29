@@ -1,0 +1,19 @@
+@import '../assets/styles/mixins';
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+
+  @include mq-below-1200() {
+    max-width: 960px;
+  }
+  @include mq-below-992() {
+    max-width: 720px;
+  }
+  @include mq-below-768() {
+    max-width: 540px;
+  }
+  @include mq-below-576() {
+    max-width: auto;
+  }
+}

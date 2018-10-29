@@ -1,0 +1,20 @@
+@mixin mq-below-1200()  {
+  @media screen and (max-width: 1199px) {
+    @content;
+  }
+}
+@mixin mq-below-992()  {
+  @media screen and (max-width: 991px) {
+    @content;
+  }
+}
+@mixin mq-below-768()  {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin mq-below-576()  {
+  @media screen and (max-width: 575px) {
+    @content;
+  }
+}
