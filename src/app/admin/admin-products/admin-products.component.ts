@@ -33,7 +33,7 @@ export class AdminProductsComponent implements OnInit {
     this.products$.subscribe(prods => this.productsSnapshot = prods.slice());
   }
 
-  openEditProduct(id: string) {
+  openEditProduct(id?: string) {
     const dialogRef = this.dialog.open(EditProductDialogComponent, {
       width: '640px',
       height: '480px',
