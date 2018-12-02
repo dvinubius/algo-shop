@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <button mat-flat-button color="primary" (click)="openEditProduct()">New Product</button>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Placeholder" #searchBox (keyup)="search$.next(searchBox.value)">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </p>
+  <ng-container *ngIf="products$ | async as products">
+    <app-products-table [products]="products" (editProduct)="openEditProduct($event)" (deleteProduct)="deleteProduct($event)"></app-products-table>
+  </ng-container>
+</div>

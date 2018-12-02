@@ -1,0 +1,20 @@
+.wrapper {
+  .form {
+    margin-top: 24px;
+
+    .mat-form-field {
+      width: 100%;
+    }
+  }
+
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+
+  .product-card {
+    max-width: 300px;
+    margin: 12px;
+  }
+}

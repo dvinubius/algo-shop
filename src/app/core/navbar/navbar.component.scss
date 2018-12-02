@@ -1,0 +1,25 @@
+@import '../../../assets/styles/variables';
+
+.navbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: $navbar-height;
+  background-color: rgba(105,105,105,0.04);
+
+  & > * {
+    display: block;
+    margin: 20px;
+  }
+
+  .cart-button .mat-badge-active {
+    transform: translateY(6px);
+  }
+}
+
+.home-icon {
+  cursor: pointer;
+  outline: none;
+}

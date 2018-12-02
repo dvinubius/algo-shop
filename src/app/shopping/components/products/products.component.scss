@@ -1,0 +1,21 @@
+:host {
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.products-panel {
+  padding: 20px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+::ng-deep .mat-list-item.item-all {
+
+  .mat-list-item-content {
+    width: 100%;
+  }
+}

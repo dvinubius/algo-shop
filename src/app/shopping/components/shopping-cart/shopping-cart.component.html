@@ -1,0 +1,34 @@
+<div *ngIf="cart$ | async as cart">
+
+  <div *ngIf="cart.items.length === 0">
+    No items in your shopping cart.
+  </div>
+
+  <div class="cart-contents" *ngIf="cart.items.length > 0">
+
+    <mat-list >
+      <mat-list-item>
+        <div class="cart-item" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="24px">
+          <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba2.jpg" 
+            alt="Photo" class="avatar" [ngStyle]="{'visibility': 'hidden'}">
+          <h3 fxFlex>Title</h3>
+          <h3 fxFlex>Quantity</h3>
+          <h3 fxFlex>Price</h3>
+        </div>
+      </mat-list-item>
+      <mat-list-item *ngFor="let item of cart.items">
+        <div class="cart-item" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="24px">
+          <img mat-card-avatar [src]="item.product.imageUrl" alt="Photo" class="avatar">
+          <div fxFlex>{{item.product.title}}</div>
+          <app-product-quantity [quantity]='item.quantity' fxFlex
+            (decQuantity)="decQuantity(item.product)"
+            (incQuantity)="incQuantity(item.product)">
+          </app-product-quantity>
+          <div fxFlex>{{item.product.price | currency}}</div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+
+    <div>Total to pay: {{cart.totalCost | currency}}</div>
+  </div>
+</div>

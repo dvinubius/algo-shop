@@ -1,7 +1,10 @@
 @import '../assets/styles/mixins';
 
+@import '../assets/styles/variables';
+
 .container {
   max-width: 1140px;
+  height: calc(100vh - #{$navbar-height});
   margin: auto;
 
   @include mq-below-1200() {

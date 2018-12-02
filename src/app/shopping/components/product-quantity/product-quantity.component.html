@@ -1,0 +1,20 @@
+
+<div class="wrapper">
+  <button *ngIf="quantity === 0" 
+    fxFlexFill mat-flat-button color="primary"
+    (click)="incQuant()">
+    Add to Cart
+  </button>
+  <div *ngIf="quantity > 0" 
+    class="quantity-wrapper" fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-flat-button color="accent" fxFlex="20%"
+      (click)="decQuant()">
+      <mat-icon>remove</mat-icon>
+    </button>  
+    <h4 class="amount-text" fxFlex="20%">{{quantity}}</h4>
+    <button mat-flat-button color="accent" fxFlex="20%"
+      (click)="incQuant()">
+      <mat-icon>add</mat-icon>
+    </button>  
+  </div>
+</div>

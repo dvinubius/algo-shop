@@ -1,0 +1,43 @@
+.wrapper {
+  width: 500px;
+}
+
+::ng-deep .products-table {
+  width: 100%;
+
+  .mat-column-id {
+    width: 80px;
+  }
+  .mat-column-name {
+    width: 40%;
+  }
+  .mat-column-price {
+    width: 20%;
+  }
+  .mat-column-edit {
+    width: 40px;
+  }
+
+  .mat-row:nth-child(odd) {
+    background-color: rgba(0,0,0,0.02);
+  }
+}
+.edit-button,
+.delete-button {
+  transform: scale(.75);
+  opacity: 0;
+}
+
+tr:hover {
+  .edit-button,
+  .delete-button {
+    opacity: 0.5;
+  }
+}
+
+.delete-button {
+  background-color: red;
+  .mat-icon {
+    color: white;
+  }
+}

@@ -1,0 +1,24 @@
+<div mat-dialog-content fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="24px" class="wrapper">
+  <form #f="ngForm" fxLayout="column" fxLayoutAlign="start start" class="form">
+    <mat-form-field>
+      <input matInput type="text" placeholder="title" name="title" [(ngModel)]="product.title">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" placeholder="Price" name="price" [(ngModel)]="product.price">
+      <span matPrefix>$&nbsp;</span>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Category" name="category" [(ngModel)]="product.category">
+        <mat-option *ngFor="let category of categories$ | async" [value]="category.name">
+          {{category.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Image URL" name="imageUrl" [(ngModel)]="product.imageUrl">
+    </mat-form-field>
+    <button mat-raised-button (click)="onSave()">Save</button>
+  </form>
+
+  <app-product-card class="product-card" [product]="product"></app-product-card>
+</div>

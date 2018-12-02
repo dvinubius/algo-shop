@@ -1,0 +1,30 @@
+<div class="wrapper" fxFlex fxLayout="row">
+  <div class="cats" fxFlex="20%">
+    <mat-selection-list (selectionChange)="$event ? masterToggle() : null">
+      <mat-list-option [selected]="selection.hasValue() && isAllSelected()">
+        All
+      </mat-list-option>
+    </mat-selection-list>
+    <mat-divider></mat-divider>
+    <mat-selection-list #categoriesList (selectionChange)="selectionChanged(categoriesList.selectedOptions)">
+      <mat-list-option *ngFor="let category of categories" [selected]="selection.isSelected(category)">
+        {{category.name}}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+
+  <div class="products-panel" fxFlex="80%">
+    <mat-grid-list cols="2" rowHeight="1:1.4" gutterSize="10px">
+      <mat-grid-tile class="product-tile" *ngFor="let product of products$ | async">
+        <app-product-card [product]="product" withFooter="true">
+          <app-product-quantity 
+            [quantity]="getQuantityOf(product)" 
+            (incQuantity)="incQuantity(product)"
+            (decQuantity)="decQuantity(product)">
+          </app-product-quantity>
+        </app-product-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+</div>

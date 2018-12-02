@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+
+.product-card {
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: all 0.2s ease-out;
+  &:hover {
+    cursor: pointer;
+    @include mat-elevation(8);
+    background-color: rgba(0,0,0,0.03);
+    transform: translateY(-3px);
+  }
+}

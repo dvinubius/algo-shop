@@ -1,0 +1,12 @@
+<mat-card class="product-card">
+  <mat-card-header>
+    <mat-card-title>{{product.title}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="product.imageUrl" alt="Photo of Yummy">
+  <mat-card-content>
+    <h3>{{product.price | currency}}</h3>
+  </mat-card-content>
+  <mat-card-footer *ngIf="withFooter">
+    <ng-content></ng-content>
+  </mat-card-footer>
+</mat-card>
